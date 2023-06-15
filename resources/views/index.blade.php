@@ -13,8 +13,8 @@
         font-family: 'Inter', sans-serif;
     }
   </style>
-<body class="bg-gradient-to-r from-teal-300 to-cyan-400">
-    <main class="grid w-4/5 mx-auto place-items-center border border-gray-300 border-3 backdrop-blur-sm bg-white/70 px-6 py-24 sm:py-32 lg:px-2">
+<body class="bg-gradient-to-r from-slate-800 to-slate-950">
+    <main class="grid w-4/5 mx-auto place-items-center border border-gray-300 border-3 backdrop-blur-sm bg-slate-950/70 px-6 py-24 sm:py-32 lg:px-2">
         <div class="text-center min-h-screen">
           <p class="font-semibold text-gray-600 text-indigo-600">I'm sorry</p>
           <h1 class="mt-4 text-3xl font-black tracking-tight text-gray-900 sm:text-5xl">The page is currently under <br> maintenance</h1>
@@ -47,7 +47,7 @@
               <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
                 Message
               </label>
-              <textarea class=" no-resize appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-indigo-500 focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
+              <textarea name="message" class=" no-resize appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-indigo-500 focus:bg-white focus:border-gray-500 h-48 resize-none" id="message"></textarea>
             </div>
           </div>
           <div class="mx-auto">

@@ -1,25 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Http\Request;
 
-class Post extends Controller
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
+use App\Models\Post;
+
+class PostController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(): View
     {
-        $post = DB::table('posts')->get();
+        $posts = Post::get();
 
-        return view('pages.posts.index', ['posts' => $post]);
+        return view('pages.posts.index', compact('posts'));
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(): View
     {
         return view('pages.posts.create');
     }
@@ -27,9 +30,19 @@ class Post extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
-        //
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required'
+        ]);
+
+        Post::create([
+            'title' => $request->title,
+            'content' => $request->content
+        ]);
+
+        return redirect()->route('posts.create')->with(['success' => 'Post berhasil diunggah']);
     }
 
     /**
